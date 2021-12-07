@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-vdjm8&^%81zw-h-6xqtc307&v0dn4wz&5v7ixy*71zce6mwrfb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [learningpanel.azurewebsites.net]
 
