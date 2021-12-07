@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+    <br><br>
+    <section class='text-center container'>
+        <hr style="background-color: white; opacity: 0.9; height: 1px">
+        <h2 style="color: white">Student Dictionary</h2>
+        <hr style="background-color: white; opacity: 0.9; height: 1px">
+        <i style="color: wheat">Enter any word to get the phonetics, definition and an example for that word</i>
+        <br><br>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div id="div_id_text" class="form-group">
+                <label for="id_text" class=" requiredField" style="color: white">
+                    Enter Something To Search <span class="asteriskField">*</span> </label>
+                <div class=""><input type="text" name="text" maxlength="200"
+                                     class="textinput textInput form-control" required="" id="id_text"></div>
+            </div>
+            <button href="" class="btn btn-outline-info" type="submit" value="Submit">
+                Search
+            </button>
+        </form>
+        <br>
+        <div class="content-section p-0 mt-5">
+            {% if input %}
+                <div class="custom-header">
+                    <h2>{{ input }}</h2>
+                    <h6>{{ phonetics }}</h6>
+                    <audio id="player" src="{{ audio }}"></audio>
+                    <a onclick="document.getElementById('player').play()"><i class='fa fa-volume-up fa-2x'></i>
+                    </a>
+                </div>
+                </div>
+
+                <hr class="p-0 m-0">
+
+                <p class="float-left">
+                <h4 style="color: white">Definition: {{ definition }}</h4>
+                <h4 style="color: white">Example: {{ example }}</h4>
+                </p> <br>
+                <a style="color: white; font-size: 20px">
+                    Synonyms:
+                    {% for synonym in  synonyms %}
+                        {{ synonym }}
+                    {% endfor %}
+                </a>
+                <hr>
+                </div>
+            {% else %}
+                <h2>Sorry, API request limit exceeded</h2>
+            {% endif %}
+    </section>
+    <br>
+    <div style="text-align: center; color: white"></div>
+    <div style="text-align: center; color: white" class="mt-4">© 2021 by Roshan Rasal</div>
+    </div><br>
+{% endblock %}

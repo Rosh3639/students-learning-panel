@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+    <br><br>
+    <section class='text-center container'>
+        <hr style="background-color: white; opacity: 0.9; height: 1px">
+        <h2 style="color: white">Search articles in wikipedia</h2>
+        <hr style="background-color: white; opacity: 0.9; height: 1px">
+        <br>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div id="div_id_text" class="form-group">
+                <label for="id_text" class=" requiredField" style="color: white">
+                    Enter Something To Search <span class="asteriskField">*</span> </label>
+                <div class=""><input type="text" name="text" maxlength="200"
+                                     class="textinput textInput form-control" required="" id="id_text"></div>
+            </div>
+            <button href="" class="btn btn-outline-info" type="submit" value="Submit">
+                Search
+            </button>
+        </form>
+        <br>
+        <div class="container">
+            <div class="content-section p-0 mt-5">
+                <a href="" class="p-0 m-0" target="_blank">
+                    <div class="custom-header">
+                        <h2>{{ title }}</h2>{{ title }}
+                        <h6>{{ link }}</h6>
+                    </div>
+                </a>
+
+                <hr class="p-0 m-0">
+                <p class="description m-5 p-5">
+                    {{ details }}
+                </p>
+                <hr>
+            </div>
+        </div>
+    </section>
+    <br>
+    <div style="text-align: center; color: white"></div>
+    <div style="text-align: center; color: white" class="mt-4">© 2021 by Roshan Rasal</div>
+    </div><br>
+
+{% endblock %}

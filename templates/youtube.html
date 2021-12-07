@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+    <br>
+    {% load crispy_forms_tags %}
+    <section class='text-center container'>
+        <hr style="background-color: white; opacity: 0.9; height: 1px">
+        <h2 style="color: white">Search Videos in Youtube</h2>
+        <hr style="background-color: white; opacity: 0.9; height: 1px">
+        <br><br>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div id="div_id_text" class="form-group">
+                <label for="id_text" class=" requiredField" style="color: white">
+                    Enter Something To Search <span class="asteriskField">*</span> </label>
+                <div class=""><input type="text" name="text" maxlength="200"
+                                     class="textinput textInput form-control" required="" id="id_text"></div>
+            </div>
+
+            <button href="" class="btn btn-outline-info" type="submit" value="Submit">
+                Search
+            </button>
+        </form>
+        <br>
+
+        {% for result in results %}
+            <a href="{{ result.link }}" target="_blank">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <img class="img-fluid" src="{{ result.thumbnail }}" alt="">
+
+                            </div>
+                            <div class="col-md-7">
+                                <h3 class="p-0 m-0">{{ result.title }}</h3>
+                                <b>
+                                    <u>
+                                        <h5 class="p-0 m-0">{{ result.channel }}</h5>
+                                    </u>
+                                </b>
+                                <h6 class="p-0 m-1">{{ result.description }}</h6>
+                                <b>
+                                    <h6 class="ml-0 mt-3">{{ result.duration }}</h6>
+                                    <h6 class="ml-0 mt-1">{{ result.views }}</h6>
+                                    <h6 class="ml-0 mt-1">{{ result.published }}</h6>
+                                </b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <br>
+        {% endfor %}
+        <br>
+    </section>
+    <br>
+    <div style="text-align: center; color: white"></div>
+    <div style="text-align: center; color: white" class="mt-4">© 2021 by Roshan Rasal</div>
+    </div><br>
+
+{% endblock %}

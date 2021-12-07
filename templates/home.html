@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <style>
+        body, html {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        .bg {
+            /* The image used */
+            background-image: url("{% static 'img/Home.jpg' %}");
+            /* Full height */
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        @media only screen and (max-width: 480px) {
+            .bg {
+                width: 800px;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .navbar-dark {
+                margin-bottom: -1px;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .navbar-dark {
+                margin-bottom: 0px;
+            }
+        }
+
+    </style>
+{% endblock %}
+
+
+{% block div %}
+    <div class="bg"></div>
+{% endblock %}
+
+{% block body %}
+    <br>
+    <section class="container text-center">
+        <hr style="background-color: white; opacity: 0.9; height: 1px">
+        <h3 style="color: wheat">Welcome</h3>
+        <hr style="background-color: white; opacity: 0.9; height: 1px">
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <a href="/notes">
+                    <div class="card">
+                        <a href="/notes">
+                            <img class="card-img-top"
+                                 src="{% static 'img/notes.jfif' %}"
+                                 alt="Notes image">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title ">
+                                Notes
+                            </h5>
+                            Create Notes to refer them later. They are stored permanently until deleted
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="/youtube">
+                        <img class="card-img-top"
+                             src="{% static 'img/utube.jfif' %}"
+                             alt="Notes image">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title ">
+                            Youtube
+                        </h5>
+                        Search Youtube and select your desired video to play it on youtube
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="/todo">
+                        <img class="card-img-top" width="807" height="308"
+                             src="{% static 'img/todo.jfif' %}"
+                             alt="Notes image">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title ">
+                            To Do
+                        </h5>
+                        Add your to-do lists for your day and remove them as you finish
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr style="background-color: white; opacity: 0.9; height: 1px">
+        <br><br><br>
+        <hr style="background-color: white; opacity: 0.9; height: 1px">
+        <div class="row">
+            <div class="col-md-4 ">
+
+                <div class="card mt-20">
+                    <a href="/books">
+                        <img class="card-img-top"
+                             src="{% static 'img/books.jfif' %}"
+                             alt="Notes image">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title ">
+                            Books
+                        </h5>
+                        Browse books from a list of neatly organised book menu
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="/dictionary">
+                        <img class="card-img-top" width="807" height="300"
+                             src="{% static 'img/dict.jfif' %}"
+                             alt="Notes image">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title ">
+                            Dictionary
+                        </h5>
+                        Enter any word to find it's meaning along with it's usage!
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="/wiki">
+                        <img class="card-img-top" width="807" height="300"
+                             src="{% static 'img/Wikipedia-Logo.png' %}"
+                             alt="Notes image">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title ">
+                            Wikipedia
+                        </h5>
+                        Homework and Assignments? Search wikipedia to get fast results
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr style="background-color: white; opacity: 0.9; height: 1px">
+    </section>
+    <br>
+    <div style="text-align: center; color: white"></div>
+    <div style="text-align: center; color: white" class="mt-4">© 2021 by Roshan Rasal</div>
+    </div><br>
+
+
+
+
+
+
+
+{% endblock %}

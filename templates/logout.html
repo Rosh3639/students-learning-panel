@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <style>
+        @media (min-width: 1400px) {
+            .container {
+                width: 100%;
+                max-width: 500px;
+                padding: 15px;
+                margin: auto;
+                color: white;
+            }
+        }
+
+    </style>
+{% endblock %}
+
+{% block body %}
+    <br><br><br>
+    <div class="container">
+        <div class="form-group pt-5 text-center">
+            <hr style="background-color: white; opacity: 0.9; height: 1px">
+            <h2 style="color: white">You are logged Out</h2>
+            <hr style="background-color: white; opacity: 0.9; height: 1px">
+            <br><br>
+            <a href="/login" class="btn btn-outline-info" type="submit" style="width: 100%; line-height: 2">
+                Log In Again
+            </a>
+        </div>
+    </div>
+
+    <br>
+    <div style="text-align: center; color: white"></div>
+    <div style="text-align: center; color: white" class="mt-4">© 2021 by Roshan Rasal</div>
+    </div><br>
+
+{% endblock %}
