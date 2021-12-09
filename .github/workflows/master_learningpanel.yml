@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'learningpanel'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CB4AF8DC27BB45D09561C321A8294B22 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9070D53993554A069DA707B776EE08F8 }}
