@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-vdjm8&^%81zw-h-6xqtc307&v0dn4wz&5v7ixy*71zce6mwrfb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["learningpanel.azurewebsites.net"]
+ALLOWED_HOSTS = ["learning-panel.azurewebsites.net"]
 
 
 # Application definition
@@ -44,6 +44,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    # 'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -78,8 +80,13 @@ WSGI_APPLICATION = 'studentportal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'django',
+        'USER': 'django@learning-panel-db',
+        'PASSWORD': os.getenv(key="DB_PASSWORD"),
+        'HOST': 'learning-panel-db.postgres.database.azure.com',
+        'PORT': '5432',
+        "OPTIONS": {"sslmode": "require"},
     }
 }
 
@@ -122,7 +129,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, "/static/")
+STATIFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -133,3 +141,4 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
+

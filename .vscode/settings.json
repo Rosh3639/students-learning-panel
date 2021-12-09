@@ -1,0 +1,4 @@
+{
+    "appService.deploySubpath": ".",
+    "appService.defaultWebAppToDeploy": "/subscriptions/4e4bef35-20d8-4bf6-ad6b-180f3c619f20/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/learning-panel"
+}
