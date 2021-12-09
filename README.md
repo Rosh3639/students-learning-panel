@@ -6,5 +6,5 @@ Note: Resgitering to this website is compulsory to unlock all sections such as t
 I have used API's for this project. 
 For databases purpose i have used Azure For PostgreSQL(single server). 
 And for the deployement of this website I used Azure Web Apps. 
-And also through VS code it was to deploy my code quickly and efficiently.  
+And also through Visual Code Studio it was easy to deploy my code quickly and efficiently.  
 
