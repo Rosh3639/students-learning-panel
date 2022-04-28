@@ -82,7 +82,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'django',
-        'USER': 'django@learning-panel-db',
+        'USER': 'django',
         'PASSWORD': os.getenv(key="DB_PASSWORD"),
         'HOST': 'learning-panel-db.postgres.database.azure.com',
         'PORT': '5432',

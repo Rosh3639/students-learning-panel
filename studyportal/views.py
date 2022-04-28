@@ -157,7 +157,7 @@ def dictionary(request):
     if request.method == "POST":
         form = PanelForm(request.POST)
         text = request.POST['text']
-        url = "https://api.dictionaryapi.dev/api/v2/entries/en_US/" + text
+        url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + text
         r = requests.get(url)
         answer = r.json()
         try:
